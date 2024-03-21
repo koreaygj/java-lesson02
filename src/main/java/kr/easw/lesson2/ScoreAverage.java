@@ -15,13 +15,16 @@ public class ScoreAverage {
      * 사용자가 0을 입력할 경우, while문을 break해야 합니다.
      */
     private static double getAverageScore(Scanner scanner) {
-        int loop = 0;
+        int loopCnt = 0;
         int score = 0;
         while (true) {
-            loop++;
-            throw new RuntimeException("이 코드 라인을 지우고, 이곳에서 작성하십시오.");
+            loopCnt++;
+            int inputNum = scanner.nextInt();
+            if(inputNum == 0)
+                break;
+            score += inputNum;
         }
-        return ((double)score) / ((double)loop);
+        return ((double)score) / ((double)loopCnt);
     }
 
     /**
@@ -36,7 +39,15 @@ public class ScoreAverage {
      * @param averageScore 평균 점수
      */
     private static String estimateGrade(double averageScore) {
-        throw new RuntimeException("이 코드 라인을 지우고, 이곳에서 작성하십시오.");
+        if(averageScore >= 90){
+            return "A";
+        }else if(averageScore >= 80){
+            return "B";
+        }else if(averageScore >= 70) {
+            return "C";
+        }else{
+            return "D";
+        }
     }
 
 }
